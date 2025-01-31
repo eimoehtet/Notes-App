@@ -1,30 +1,17 @@
+<script setup lang="ts">
+</script>
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  
-  <NoteList title="Daily Meetings" />
+  <header>
+
+    <div class="bg-red-500 text-white text-3xl p-5">
+    <NoteList />
+    </div>
+   
+  </header>
+
 </template>
-
-<script>
-import NoteList from './components/NoteList.vue'
-
-
-
-export default {
-  name: 'App',
-  components: {
-    NoteList,
-    
-  }
-}
+<script setup>
+  import NoteList from "./components/NoteList.vue";
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+
