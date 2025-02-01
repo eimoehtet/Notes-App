@@ -46,7 +46,8 @@ const saveNote=async()=>{
 </script>
 
 <template>
-  <div class="h-full flex items-center justify-center bg-gray-100 p-4">
+  <div><RouterLink :to="`/`">Lists</RouterLink> | Edit</div>
+  <div class="h-full flex  bg-blue-100 p-4">
     <div class="w-full max-w-2xl mx-auto p-4 bg-white shadow-lg rounded-lg">
     <h2 class="text-xl font-bold mb-2">Update a Note</h2>
     <form @submit.prevent="saveNote" class="flex flex-col gap-3">

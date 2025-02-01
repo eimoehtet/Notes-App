@@ -23,9 +23,10 @@
 }
 </script>
 <template>
-    <div class="h-full flex bg-gray-300   p-4">
+  <div>Lists</div>
+    <div class=" h-full flex bg-blue-100   p-4">
         <div class="w-full max-w-2xl mx-auto p-4 bg-white shadow-lg rounded-lg">
-        <div class="p-4"><RouterLink  class="bg-blue-800 p-2  ml-120 rounded-lg w-30" :to="`/create`"><button>Create New Note</button></RouterLink></div>
+        <div class="p-4"><RouterLink  class="bg-blue-800 p-2  ml-120 rounded-lg w-30" :to="`/create`"><button class="text-white">Create New Note</button></RouterLink></div>
         <table class="min-w-full border border-gray-300">
           <thead class="bg-gray-200">
             <tr>
@@ -45,25 +46,28 @@
                   {{ note.title }}
                
               </td>
-              <td class="border px-6 py-2">
-                {{ note.createdAt }}
+              <td class="border px-4 py-2">
+                {{ new Date(note.createdAt).toLocaleString() }}
               </td>
              
-              <td class="border px-4 py-2 text-center">
+              <td class="border px-4 py-2 text-center ">
                 <RouterLink
                   :to="`/${note.id}`"
-                  class="  px-3 py-1 rounded hover:text-yellow-500"
+                  class="  px-3 py-1 rounded hover:text-yellow-500 inline-block"
                 >
                 <EyeIcon class="w-5 h-5" />
                 </RouterLink>    
                 <RouterLink
                   :to="`/edit/${note.id}`"
-                  class="  px-3 py-1 rounded hover:text-yellow-500"
+                  class="  px-3 py-1 rounded hover:text-yellow-500 inline-block"
                 >
                 <PencilIcon class="w-5 h-5" />
                 </RouterLink>
-
-               <TrashIcon @click="deletenote(note.id)" class="w-5 h-5 hover:text-red-500" />
+                <RouterLink
+                  class="  px-3 py-1 rounded hover:text-yellow-500 inline-block"
+                >
+                <TrashIcon @click="deletenote(note.id)" class="w-5 h-5" />
+              </RouterLink>
               </td>
             </tr>
           </tbody>
